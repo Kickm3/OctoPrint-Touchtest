@@ -27,6 +27,7 @@ $(function() {
       code += " X" + xPos;
       code += " Y" + yPos;
       code += " F" + self.feedrate();
+      OctoPrint.control.sendGcode("G90"); //Set to Absolute Positioning
       OctoPrint.control.sendGcode(code);
       console.log("TouchTest: Sending command \"" + code +"\"");
     }
